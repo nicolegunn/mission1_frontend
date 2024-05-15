@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+:root {
+  --font-serif: "Roboto Slab", serif;
+  --font-sans-serif: Raleway, sans-serif;
+  --color-dark: #222831;
+  --color-medium: #393e46;
+  --color-light: #eeeeee;
+  --color-accent: #ffc100;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: none;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans-serif);
+  background-color: var(--color-medium);
+  color: var(--color-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
