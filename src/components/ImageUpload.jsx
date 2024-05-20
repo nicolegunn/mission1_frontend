@@ -1,5 +1,5 @@
 import styles from "./ImageUpload.module.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 
 // updateBody, updateMake;
@@ -8,7 +8,7 @@ export default function ImageUpload({ updateCarData }) {
   const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
-    console.log('image uploaded')
+    console.log("image uploaded");
     console.log(process.env.REACT_APP_BACKEND_URL);
     if (image !== null) {
       const formData = new FormData();
@@ -37,10 +37,13 @@ export default function ImageUpload({ updateCarData }) {
     }
   }, [image, imageUrl]);
 
-  const handleImageChange = (event) => {
-    setImage(event.target.files[0]);
-    setImageUrl(URL.createObjectURL(event.target.files[0]));
-  };
+  const handleImageChange = useCallback((event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setImage(file);
+      setImageUrl(URL.createObjectURL(file));
+    }
+  }, []);
 
   return (
     <div className={styles.MainContainer}>
