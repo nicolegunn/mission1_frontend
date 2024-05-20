@@ -1,13 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100..700&display=swap");
 
 :root {
-  --font-serif: "Roboto Slab", serif;
-  --font-sans-serif: Raleway, sans-serif;
-  --color-dark: #222831;
-  --color-medium: #393e46;
-  --color-light: #eeeeee;
-  --color-accent: #ffc100;
+  --font-sans-serif: Lato, sans-serif;
+  --color-dark: #333;
+  --color-light: #fff;
+  --color-medium: #ccc;
+  --color-accent1: rgb(0, 115, 207);
+  --color-accent2: #b71234;
+  --color-accent3: #12b72d;
+  --spacer: 0.5vw;
+  --fs: clamp(0.9rem, 2vw + 0.5rem, 1.5rem);
+  --shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+  --b-radius-button: 6px;
+  --b-radius-cards: 12px;
+  --b-radius-inputs: 4px;
+  --b-radius-container: 16px;
+  --card-aspect-ratio: 6/4;
+  --media-break-point: 600px;
 }
 
 *,
@@ -26,9 +36,10 @@
 
 body {
   min-height: 100vh;
+  background-color: var(--color-light);
+  color: var(--color-accent1);
   font-family: var(--font-sans-serif);
-  background-color: var(--color-medium);
-  color: var(--color-light);
+  font-size: var(--fs);
 }
 
 h1,

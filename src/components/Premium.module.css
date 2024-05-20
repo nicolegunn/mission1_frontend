@@ -1,0 +1,80 @@
+.PremiumContainer {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1;
+  padding-block: calc(var(--spacer) * 6);
+  padding-inline: calc(var(--spacer) * 4);
+  background-color: var(--color-medium);
+}
+
+.MainHeading {
+  font-weight: 600;
+  margin-bottom: calc(var(--spacer) * 3);
+  font-size: calc(var(--fs) * 1.25);
+  color: color-mix(in lab, var(--color-medium) 30%, var(--color-dark) 70%);
+  text-align: center;
+}
+
+.AITextContainer {
+  padding-block: calc(var(--spacer) * 3);
+  padding-inline: calc(var(--spacer) * 3);
+  margin-block: calc(var(--spacer) * 3);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border-radius: var(--b-radius-container);
+  box-shadow: var(--shadow);
+  background-color: color-mix(
+    in lab,
+    var(--color-medium) 50%,
+    var(--color-dark) 25%
+  );
+  color: var(--color-light);
+}
+
+.AIHeading {
+  padding-bottom: calc(var(--spacer) * 2);
+  font-size: 0.75em;
+  font-weight: 600;
+}
+
+.AILine {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-block: var(--spacer);
+  font-size: 0.6em;
+}
+
+.AIField {
+  font-weight: 600;
+}
+
+.AIResult {
+}
+
+.AIConfidence {
+}
+
+.FilterContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: calc(var(--spacer) * 2);
+}
+
+.CalculatePremiumButton {
+  padding-block: var(--spacer);
+  padding-inline: calc(var(--spacer) * 2);
+  border-radius: var(--b-radius-button);
+  background-color: var(--color-accent3);
+  color: var(--color-light);
+  font-size: calc(var(--fs) * 0.75);
+  width: fit-content;
+  align-self: center;
+  box-shadow: var(--shadow);
+  margin-top: auto;
+}
+
+@media (width > 600px) {
+  .PremiumContainer {
+    border-radius: 0px var(--b-radius-container) var(--b-radius-container) 0px;
+  }
+}

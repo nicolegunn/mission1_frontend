@@ -1,0 +1,48 @@
+.MainContainer {
+  --img-width: clamp(200px, 85vw, 400px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-block: calc(var(--spacer) * 6);
+  padding-inline: calc(var(--spacer) * 1);
+  background-color: var(--color-accent1);
+  color: var(--color-light);
+}
+
+.MainHeading {
+  font-weight: 600;
+  margin-bottom: calc(var(--spacer) * 3);
+  font-size: calc(var(--fs) * 1.25);
+}
+
+.CarImage {
+  width: var(--img-width);
+  aspect-ratio: var(--card-aspect-ratio);
+  border-radius: var(--b-radius-container);
+  margin-block: calc(var(--spacer) * 3);
+  box-shadow: var(--shadow);
+    border: var(--color-light) dashed 5px;
+}
+
+.UploadFileButton {
+  padding-block: var(--spacer);
+  padding-inline: calc(var(--spacer) * 2);
+  border-radius: var(--b-radius-button);
+  background-color: var(--color-accent3);
+  color: var(--color-light);
+  font-size: calc(var(--fs) * 0.75);
+  box-shadow: var(--shadow);
+
+  margin-top: auto;
+}
+
+.UploadFileButton input[type="file"] {
+  display: none;
+}
+
+@media (width > 600px) {
+  .MainContainer {
+    border-radius: var(--b-radius-container) 0px 0px var(--b-radius-container);
+  }
+}

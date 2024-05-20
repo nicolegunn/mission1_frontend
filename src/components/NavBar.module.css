@@ -1,1 +1,19 @@
-.NavBar{}
+.NavBar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: calc(var(--spacer) * 1);
+  padding-inline: calc(var(--spacer) * 3);
+}
+
+.CompanyName {
+  font-size: calc(var(--fs) * 1.25);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.GrayFont {
+  color: var(--color-medium);
+}
