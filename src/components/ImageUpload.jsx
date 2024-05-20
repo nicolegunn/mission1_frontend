@@ -1,6 +1,7 @@
 import styles from "./ImageUpload.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+require("dotenv").config();
 
 // updateBody, updateMake;
 export default function ImageUpload({ updateCarData }) {
@@ -13,7 +14,7 @@ export default function ImageUpload({ updateCarData }) {
       formData.append("image", image);
 
       axios
-        .post("https://carinsurancebackend.azurewebsites.net/upload", formData)
+        .post(`${process.env.REACT_APP_BACKEND_URL}/upload`, formData)
         .then((response) => {
           const bodyType = response.data.bodyType;
           const carMake = response.data.carMake;

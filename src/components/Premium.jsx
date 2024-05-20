@@ -2,6 +2,7 @@ import styles from "./Premium.module.css";
 import { useState, useEffect } from "react";
 import DropDown from "./DropDown";
 import axios from "axios";
+require("dotenv").config(); 
 
 const bodyTypes = ["Sedan", "Hatchback", "Station Wagon", "SUV", "Van", "Ute"];
 const makes = [
@@ -33,7 +34,7 @@ export default function Premium({
       console.log(`bodyType: ${bodyType}`);
       console.log(`make: ${make}`);
       axios
-        .post("https://carinsurancebackend.azurewebsites.net/calculate", {
+        .post(`${process.env.REACT_APP_BACKEND_URL}/calculate`, {
           bodyType: bodyType,
           make: make,
         })
