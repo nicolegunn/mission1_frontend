@@ -30,10 +30,10 @@ export default function Premium({
 
   useEffect(() => {
     if (bodyType.length > 0 && make.length > 0) {
-      console.log(`bodyType: ${bodyType}`)
+      console.log(`bodyType: ${bodyType}`);
       console.log(`make: ${make}`);
       axios
-        .post("http://localhost:4001/calculate", {
+        .post("https://carinsurancebackend.azurewebsites.net/calculate", {
           bodyType: bodyType,
           make: make,
         })
