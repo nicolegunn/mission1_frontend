@@ -18,6 +18,7 @@ export default function ImageUpload({ updateCarData }) {
           const bodyType = response.data.bodyType;
           const carMake = response.data.carMake;
           const bodyTypeConfidence = response.data.bodyTypeConfidence;
+          const carMakeConfidence = response.data.carMakeConfidence;
 
           updateCarData(
             bodyType,
