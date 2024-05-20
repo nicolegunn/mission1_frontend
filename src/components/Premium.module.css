@@ -1,6 +1,74 @@
 .PremiumContainer {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+  background-color: var(--color-medium);
+  border-radius: var(--b-radius-cards);
+  box-shadow: var(--shadow);
+  gap: 1rem;
+}
+
+.MainHeading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.AITextContainer {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  padding: 1rem;
+  border-radius: var(--b-radius-cards);
+  box-shadow: var(--shadow);
+}
+
+.AIHeading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.AILine {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.AIField {
+  font-weight: 600;
+}
+
+.FilterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.CalculatePremiumButton {
+  display: inline-block;
+  background-color: var(--color-accent3);
+  color: var(--color-light);
+  padding: 0.5rem 1rem;
+  border-radius: var(--b-radius-button);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.CalculatePremiumButton:hover {
+  background-color: darken(var(--color-accent3), 10%);
+}
+
+@media (min-width: var(--media-break-point)) {
+  .PremiumContainer {
+    border-radius: var(--b-radius-cards);
+  }
+}
+
+
+/* .PremiumContainer {
+  display: flex;
+  flex-direction: column;
   flex-basis: 1;
   padding-block: calc(var(--spacer) * 6);
   padding-inline: calc(var(--spacer) * 4);
@@ -77,4 +145,4 @@
   .PremiumContainer {
     border-radius: 0px var(--b-radius-container) var(--b-radius-container) 0px;
   }
-}
+} */

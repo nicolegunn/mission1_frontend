@@ -1,4 +1,32 @@
+
+
 .NavBar {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacer) 2rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.CompanyName {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.GrayFont {
+  color: var(--color-medium);
+}
+
+
+
+
+
+/* .NavBar {
   position: sticky;
   top: 0;
   display: flex;
@@ -14,6 +42,3 @@
   line-height: 1;
 }
 
-.GrayFont {
-  color: var(--color-medium);
-}
