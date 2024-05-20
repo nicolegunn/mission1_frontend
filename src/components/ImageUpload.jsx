@@ -13,7 +13,7 @@ export default function ImageUpload({ updateCarData }) {
       formData.append("image", image);
 
       axios
-        .post(`https://carinsurancebackend.azurewebsites.net`, formData)
+        .post(`https://carinsurancebackend.azurewebsites.net/upload`, formData)
         .then((response) => {
           const bodyType = response.data.bodyType;
           const carMake = response.data.carMake;
