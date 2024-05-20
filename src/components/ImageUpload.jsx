@@ -40,7 +40,12 @@ export default function ImageUpload({ updateCarData }) {
         alt="Uploaded"
       />
       <label htmlFor="fileInput" className={styles.UploadFileButton}>
-        <
+                 <span>Choose File</span>
+        <input id="fileInput" type="file" onChange={handleImageChange} />
+       </label>
+     </div>
+   );
+ }
 
 
 // import styles from "./ImageUpload.module.css";
