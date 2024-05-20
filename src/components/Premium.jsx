@@ -2,7 +2,6 @@ import styles from "./Premium.module.css";
 import { useState, useEffect } from "react";
 import DropDown from "./DropDown";
 import axios from "axios";
-require("dotenv").config(); 
 
 const bodyTypes = ["Sedan", "Hatchback", "Station Wagon", "SUV", "Van", "Ute"];
 const makes = [

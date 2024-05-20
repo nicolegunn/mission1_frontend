@@ -1,7 +1,6 @@
 import styles from "./ImageUpload.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-require("dotenv").config();
 
 // updateBody, updateMake;
 export default function ImageUpload({ updateCarData }) {
