@@ -8,6 +8,8 @@ export default function ImageUpload({ updateCarData }) {
   const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
+    console.log('image uploaded')
+    console.log(process.env.REACT_APP_BACKEND_URL);
     if (image !== null) {
       const formData = new FormData();
       formData.append("image", image);
