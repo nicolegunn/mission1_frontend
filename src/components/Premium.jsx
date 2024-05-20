@@ -33,7 +33,7 @@ export default function Premium({
       console.log(`bodyType: ${bodyType}`);
       console.log(`make: ${make}`);
       axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/calculate`, {
+        .post(`https://carinsurancebackend.azurewebsites.net/calculate`, {
           bodyType: bodyType,
           make: make,
         })

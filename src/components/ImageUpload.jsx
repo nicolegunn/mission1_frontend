@@ -8,21 +8,17 @@ export default function ImageUpload({ updateCarData }) {
   const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
-    console.log("image uploaded");
-    console.log(process.env.REACT_APP_BACKEND_URL);
     if (image !== null) {
       const formData = new FormData();
       formData.append("image", image);
 
       axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/upload`, formData)
+        .post(`https://carinsurancebackend.azurewebsites.net`, formData)
         .then((response) => {
           const bodyType = response.data.bodyType;
           const carMake = response.data.carMake;
           const bodyTypeConfidence = response.data.bodyTypeConfidence;
-          const carMakeConfidence = response.data.carMakeConfidence;
-          // updateBody(bodyType);
-          // updateMake(carMake);
+
           updateCarData(
             bodyType,
             carMake,
