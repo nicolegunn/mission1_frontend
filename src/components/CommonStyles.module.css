@@ -1,0 +1,42 @@
+.SameHeightContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer-lrg);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  padding: var(--spacer-lrg);
+  margin: auto;
+  border-radius: var(--b-radius-cards);
+  box-shadow: var(--shadow);
+}
+
+.MainHeading {
+  color: var(--color-light);
+  font-family: var(--font-serif);
+  font-size: var(--fs-heading-main);
+  font-weight: 700;
+  text-align: center;
+}
+
+.Button {
+  text-align: center;
+  width: 15rem;
+  max-width: 80%;
+  padding: calc(var(--spacer-med) * 0.75) calc(var(--spacer-med) * 1.5);
+  background-color: var(--color-accent3);
+  color: var(--color-light);
+  border-radius: var(--b-radius-button);
+  font-size: var(--fs-buttons);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Button:hover {
+  background-color: var(--color-accent3-dark);
+  transform: scale(1.05);
+}

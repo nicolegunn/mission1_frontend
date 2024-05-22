@@ -10,14 +10,6 @@ function App() {
   const [bodyTypeConfidence, setBodyTypeConfidence] = useState(null);
   const [makeConfidence, setMakeConfidence] = useState(null);
 
-  const updateBodyType = (newBodyType) => {
-    setBodyType(newBodyType);
-  };
-
-  const updateMake = (newMake) => {
-    setMake(newMake);
-  };
-
   const updateCarData = (
     newBodyType,
     newMake,
@@ -34,7 +26,6 @@ function App() {
     <>
       <NavBar />
       <div className={styles.MainContainer}>
-        {/* updateBody={updateBodyType} updateMake={updateMake} */}
         <ImageUpload updateCarData={updateCarData} />
         <Premium
           bodyType={bodyType}

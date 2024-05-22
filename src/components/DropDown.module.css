@@ -1,12 +1,8 @@
-.DropDownWrapper {
-  padding-top: var(--spacer);
-  font-size: .6em;
-}
-
-.DropDown{
-    width: 100%;
-    padding-block: var(--spacer);
-    padding-left: var(--spacer);
-    border-radius: var(--b-radius-inputs);
-    box-shadow: var(--shadow);
+.DropDown {
+  width: 100%;
+  padding-block: calc(var(--spacer-med) * 0.75);
+  padding-left: var(--spacer-sm);
+  border-radius: var(--b-radius-inputs);
+  box-shadow: var(--shadow);
+  font-size: var(--fs-dropdowns);
 }

@@ -10,6 +10,7 @@ export default function DropDown({
     initialSelectedValue || ""
   );
 
+  // If the bodyType or make props change in Premium, this will trigger an initialSelectedValue change
   useEffect(() => {
     setSelectedValue(initialSelectedValue);
   }, [initialSelectedValue]);
@@ -19,20 +20,20 @@ export default function DropDown({
   };
 
   return (
-    <div className={styles.DropDownWrapper}>
       <select
         className={styles.DropDown}
         value={selectedValue}
         onChange={handleChange}
       >
         <option value="">{selectMsg}</option>
-        {/* Dynamically create options based on items */}
         {items.map((item, index) => (
           <option key={index} value={item}>
             {item}
           </option>
         ))}
       </select>
-    </div>
   );
 }
+
+
+  

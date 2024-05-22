@@ -2,31 +2,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100..700&display=swap");
 
 :root {
-  --font-sans-serif: Lato, sans-serif;
-  --font-serif: "Roboto Slab", serif;
-  --color-dark: #333;
-  --color-light: #fff;
-  --color-medium: #ccc;
-  --color-accent1: #0073cf;
-  --color-accent2: #b71234;
-  --color-accent3: #12b72d;
-  --spacer: 0.5rem;
-  --fs: clamp(0.9rem, 2vw + 0.5rem, 1.5rem);
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --b-radius-button: 4px;
+  --spacer-med: 1rem;
+  --spacer-sm: calc(var(--spacer-med) * 0.5);
+  --spacer-lrg: calc(var(--spacer-med) * 2);
+  --b-radius-container: 8px;
   --b-radius-cards: 8px;
   --b-radius-inputs: 4px;
-  --b-radius-container: 8px;
-  --card-aspect-ratio: 6/4;
-  --media-break-point: 768px;
+  --b-radius-button: 4px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --color-dark: #2a2a2a;
+  --color-light: #f7f7f7;
+  --color-medium: #a8a8a8;
+  --color-accent1: #0056a6;
+  --color-accent2: #d62828;
+  --color-accent3: #28a745;
+  --color-accent3-dark: #218838;
+  --font-sans-serif: Lato, sans-serif;
+  --font-serif: "Roboto Slab", serif;
+  --fs: clamp(0.9rem, 2vw + 0.5rem, 1.5rem);
+  --fs-nav: 1.5rem;
+  --fs-heading-main: 2rem;
+  --fs-heading-sub: 1.25rem;
+  --fs-fields: 1rem;
+  --fs-dropdowns: 0.9rem;
+  --fs-buttons: 1rem;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0px;
   padding: 0px;
+  margin: 0px;
+  border: none;
   font: inherit;
 }
 
@@ -34,46 +42,4 @@ body {
   background-color: var(--color-light);
   color: var(--color-dark);
   font-family: var(--font-sans-serif);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-serif);
-  color: var(--color-dark);
-  margin-bottom: var(--spacer);
-  /* text-wrap: balance; */
-}
-
-li {
-  list-style-type: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  color: var(--color-accent1);
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-  background-color: var(--color-accent3);
-  color: var(--color-light);
-  border-radius: var(--b-radius-button);
-  padding: var(--spacer) 1rem;
-  font-size: 1rem;
-  box-shadow: var(--shadow);
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: darken(var(--color-accent3), 10%);
 }

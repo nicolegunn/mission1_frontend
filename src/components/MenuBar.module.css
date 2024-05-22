@@ -1,5 +1,3 @@
-.MenuBar {
-}
 .HamburgerBars {
-  font-size: calc(var(--fs) * 1.5);
+  font-size: calc(var(--fs-nav) * 1.25);
 }

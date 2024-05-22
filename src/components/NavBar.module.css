@@ -1,37 +1,33 @@
 .NavBar {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--spacer) 2rem;
-  box-shadow: var(--shadow);
   position: sticky;
   top: 0;
   z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacer-sm) var(--spacer-med);
+  box-shadow: var(--shadow);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.LogoAndCompanyName {
+  display: flex;
+  gap: calc(var(--spacer-sm) * 0.5);
+  align-items: end;
+}
+
+.Logo {
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
 }
 
 .CompanyName {
-  font-size: 1.5rem;
+  font-size: var(--fs-nav);
   font-weight: 700;
 }
 
 .GrayFont {
   color: var(--color-medium);
 }
-
-/* .NavBar {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: calc(var(--spacer) * 1);
-  padding-inline: calc(var(--spacer) * 3);
-}
-
-.CompanyName {
-  font-size: calc(var(--fs) * 1.25);
-  font-weight: 600;
-  line-height: 1;
-} */

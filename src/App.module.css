@@ -1,19 +1,19 @@
 .MainContainer {
   display: flex;
   flex-direction: column;
-  gap: var(--spacer);
-  padding: var(--spacer) 1rem;
+  gap: var(--spacer-sm);
+  padding: var(--spacer-med);
 }
 
-@media (min-width: var(--media-break-point)) {
+@media (min-width: 768px) {
   .MainContainer {
-    flex-direction: row;
-    gap: 2rem;
-    padding: 2rem;
-    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacer-lrg);
     max-width: 1200px;
+    padding: var(--spacer-lrg);
+    margin: var(--spacer-lrg) auto;
     border-radius: var(--b-radius-container);
     box-shadow: var(--shadow);
   }
 }
-
