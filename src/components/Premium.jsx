@@ -1,7 +1,6 @@
 import commonStyles from "./CommonStyles.module.css";
 import styles from "./Premium.module.css";
 import { useState, useEffect, useRef } from "react";
-import { CSSTransition } from "react-transition-group";
 import axios from "axios";
 import DropDown from "./DropDown";
 
@@ -35,10 +34,12 @@ export default function Premium({
 }) {
   const [premium, setPremium] = useState(null);
   const [showAIResults, setShowAIResults] = useState(false);
-  const aiNodeRef = useRef(null);
-  const premiumNodeRef = useRef(null);
+  const [showPremium, setShowPremium] = useState(false);
+  const aiRef = useRef(null);
+  const premiumRef = useRef(null);
 
   useEffect(() => {
+    setShowPremium(false);
     if (bodyType.length > 0 && make.length > 0) {
       setShowAIResults(true);
     } else {
@@ -57,6 +58,7 @@ export default function Premium({
           const base_premium = response.data.base_premium;
           const multiple = response.data.multiple;
           setPremium(base_premium * multiple);
+          setShowPremium(true);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -69,39 +71,35 @@ export default function Premium({
       className={`${commonStyles.SameHeightContainer} ${styles.PremiumContainer}`}
     >
       <h2 className={commonStyles.MainHeading}>Premium Calculator</h2>
-      <CSSTransition
-        in={showAIResults}
-        nodeRef={aiNodeRef}
-        timeout={300}
-        classNames={{
-          enter: styles.TransitionEnter,
-          enterActive: styles.TransitionEnterActive,
-          exit: styles.TransitionExit,
-          exitActive: styles.TransitionExitActive,
-        }}
-        unmountOnExit
+      <div
+        className={styles.CollapsibleWrapper}
+        ref={aiRef}
+        style={
+          showAIResults
+            ? { height: aiRef.current.scrollHeight + "px" }
+            : { height: "0px" }
+        }
       >
-        {(state) => (
-          <div ref={aiNodeRef} className={styles.AITextContainer}>
-            <h3 className={styles.AIHeading}>
-              Vehicle Specifications
-              <span>Detected by AI</span>
-            </h3>
-            <div className={styles.AILine}>
-              <span className={styles.AIField}>Body Type:</span>
-              <span className={styles.AIResult}>{bodyType}</span>
-              <span className={styles.AIField}>Confidence:</span>
-              <span className={styles.AIConfidence}>{bodyTypeConfidence}%</span>
-            </div>
-            <div className={styles.AILine}>
-              <div className={styles.AIField}>Make:</div>
-              <div className={styles.AIResult}>{make}</div>
-              <span className={styles.AIField}>Confidence:</span>
-              <span className={styles.AIConfidence}>{makeConfidence}%</span>
-            </div>
+        <div className={styles.AITextContainer}>
+          <h3 className={styles.AIHeading}>
+            Vehicle Specifications
+            <span>Detected by AI</span>
+          </h3>
+          <div className={styles.AILine}>
+            <span className={styles.AIField}>Body Type:</span>
+            <span className={styles.AIResult}>{bodyType}</span>
+            <span className={styles.AIField}>Confidence:</span>
+            <span className={styles.AIConfidence}>{bodyTypeConfidence}%</span>
           </div>
-        )}
-      </CSSTransition>
+          <div className={styles.AILine}>
+            <div className={styles.AIField}>Make:</div>
+            <div className={styles.AIResult}>{make}</div>
+            <span className={styles.AIField}>Confidence:</span>
+            <span className={styles.AIConfidence}>{makeConfidence}%</span>
+          </div>
+        </div>
+      </div>
+
       <div className={styles.FilterContainer}>
         <DropDown
           items={bodyTypes}
@@ -114,27 +112,20 @@ export default function Premium({
           initialSelectedValue={make}
         />
       </div>
-      <CSSTransition
-        in={Boolean(premium)}
-        nodeRef={premiumNodeRef}
-        timeout={300}
-        classNames={{
-          enter: styles.TransitionEnter,
-          enterActive: styles.TransitionEnterActive,
-          exit: styles.TransitionExit,
-          exitActive: styles.TransitionExitActive,
-        }}
-        unmountOnExit
+      <div
+        className={styles.CollapsibleWrapper}
+        ref={premiumRef}
+        style={
+          showPremium
+            ? { height: premiumRef.current.scrollHeight + "px" }
+            : { height: "0px" }
+        }
       >
-        {(state) => (
-          <p
-            ref={premiumNodeRef}
-            className={`${styles.PremiumMessage} ${
-              state === "entered" ? styles.show : ""
-            }`}
-          >{`The estimated premium is: ${NZDollar.format(premium)}`}</p>
-        )}
-      </CSSTransition>
+        <p
+          className={styles.PremiumMessage}
+        >{`The estimated premium is: ${NZDollar.format(premium)}`}</p>
+      </div>
+
       <div className={commonStyles.Button} onClick={handleClick}>
         Calculate Premium
       </div>

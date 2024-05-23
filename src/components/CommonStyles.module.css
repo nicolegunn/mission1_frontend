@@ -6,11 +6,13 @@
   align-items: center;
   width: 100%;
   max-width: 500px;
+  /* min-height: 300px; */
   height: 100%;
   padding: var(--spacer-lrg);
   margin: auto;
   border-radius: var(--b-radius-cards);
   box-shadow: var(--shadow);
+  transition: height 0.5s ease;
 }
 
 .MainHeading {

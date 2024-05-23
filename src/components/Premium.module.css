@@ -3,6 +3,12 @@
   gap: 2rem;
 }
 
+.CollapsibleWrapper {
+  height: 0px;
+  overflow: hidden;
+  transition: height ease 0.5s;
+}
+
 .AITextContainer {
   width: 100%;
   padding: var(--spacer-med);
@@ -54,24 +60,3 @@
   font-weight: 600;
 }
 
-.TransitionEnter {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-.TransitionEnterActive {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 500ms ease-out, transform 600ms ease-out;
-}
-
-.TransitionExit {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.TransitionExitActive {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 500ms ease-out, transform 600ms ease-out;
-}
