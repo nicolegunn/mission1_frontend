@@ -13,7 +13,7 @@ export default function ImageUpload({ updateCarData }) {
       formData.append("image", image);
 
       axios
-        .post(`${process.env.BACKEND_URL}/upload`, formData)
+        .post(`${process.env.REACT_APP_BACKEND_URL}/upload`, formData)
         .then((response) => {
           const { bodyType, carMake, bodyTypeConfidence, carMakeConfidence } =
             response.data;
