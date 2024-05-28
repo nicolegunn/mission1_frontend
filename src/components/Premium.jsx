@@ -50,7 +50,7 @@ export default function Premium({
   const handleClick = () => {
     if (bodyType.length > 0 && make.length > 0) {
       axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/calculate`, {
+        .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/calculate`, {
           bodyType: bodyType,
           make: make,
         })

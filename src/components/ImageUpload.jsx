@@ -1,6 +1,6 @@
 import commonStyles from "./CommonStyles.module.css";
 import styles from "./ImageUpload.module.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function ImageUpload({ updateCarData }) {
@@ -13,7 +13,7 @@ export default function ImageUpload({ updateCarData }) {
       formData.append("image", image);
 
       axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/upload`, formData)
+        .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/upload`, formData)
         .then((response) => {
           const { bodyType, carMake, bodyTypeConfidence, carMakeConfidence } =
             response.data;
