@@ -50,7 +50,7 @@ export default function Premium({
   const handleClick = () => {
     if (bodyType.length > 0 && make.length > 0) {
       axios
-        .post(`https://carinsurancebackend.azurewebsites.net/calculate`, {
+        .post(`${process.env.BACKEND_URL}/calculate`, {
           bodyType: bodyType,
           make: make,
         })
