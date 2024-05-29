@@ -1,8 +1,4 @@
 {
-  "globalHeaders": {
-    "Access-Control-Allow-Origin": "https://red-mud-0cb8e9600.5.azurestaticapps.net",
-    "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
-  },
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["*.{css,scss,js,png,gif,ico,jpg,svg}"]
