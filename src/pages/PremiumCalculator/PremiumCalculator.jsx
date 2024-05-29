@@ -15,8 +15,6 @@ export default function PremiumCalculator() {
     e.preventDefault();
     setRiskRating(null);
     const data = { claim_history: textInput.trim() };
-    console.log(data);
-    console.log(typeof data.claim_history);
     axios
       .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL2}/risk_rating`, data)
       .then((response) => {
