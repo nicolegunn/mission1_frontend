@@ -1,7 +1,7 @@
-import commonStyles from "./CommonStyles.module.css";
-import styles from "./Premium.module.css";
-import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { useState, useEffect, useRef } from "react";
+import commonStyles from "../../../assets/styles/CommonStyles.module.css";
+import styles from "./Premium.module.css";
 import DropDown from "./DropDown";
 
 const bodyTypes = ["Sedan", "Hatchback", "Station Wagon", "SUV", "Van", "Ute"];

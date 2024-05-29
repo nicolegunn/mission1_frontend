@@ -1,0 +1,36 @@
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Form {
+  width: 80%;
+  background-color: var(--color-medium);
+}
+
+.Form > textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: var(--spacer-sm);
+  border-radius: var(--b-radius-cards);
+  box-shadow: var(--shadow);
+  caret-color: var(--color-accent3);
+}
+
+.RiskRatingMessage {
+  text-align: center;
+  color: var(--color-accent3-dark);
+  font-size: var(--fs-heading-sub);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .MainContainer {
+    max-width: 1200px;
+    padding: var(--spacer-lrg);
+    margin: var(--spacer-lrg) auto;
+    border-radius: var(--b-radius-container);
+    box-shadow: var(--shadow);
+  }
+}

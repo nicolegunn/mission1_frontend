@@ -1,5 +1,5 @@
 import styles from "./NavBar.module.css";
-import MenuBar from "./MenuBar";
+import MenuBar from "./components/MenuBar";
 
 export default function NavBar() {
   return (

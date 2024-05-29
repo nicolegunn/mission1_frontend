@@ -1,5 +1,5 @@
-import styles from "./DropDown.module.css";
 import { useState, useEffect } from "react";
+import styles from "./DropDown.module.css";
 
 export default function DropDown({
   items = [],
