@@ -1,4 +1,5 @@
 import axios from "axios";
+import { SyncLoader } from "react-spinners";
 import { useState, useEffect, useRef } from "react";
 import commonStyles from "../../../assets/styles/CommonStyles.module.css";
 import styles from "./Premium.module.css";
@@ -31,24 +32,26 @@ export default function Premium({
   make,
   bodyTypeConfidence,
   makeConfidence,
+  isLoading,
+  showAIResults,
+  updateShowLoading,
 }) {
   const [premium, setPremium] = useState(null);
-  const [showAIResults, setShowAIResults] = useState(false);
   const [showPremium, setShowPremium] = useState(false);
+  const [loadingPremium, setLoadingPremium] = useState(false);
   const aiRef = useRef(null);
   const premiumRef = useRef(null);
 
   useEffect(() => {
     setShowPremium(false);
     if (bodyType.length > 0 && make.length > 0) {
-      setShowAIResults(true);
-    } else {
-      setShowAIResults(false);
+      updateShowLoading(false);
     }
   }, [bodyType, make]);
 
   const handleClick = () => {
     if (bodyType.length > 0 && make.length > 0) {
+      setLoadingPremium(true);
       axios
         .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/calculate`, {
           bodyType: bodyType,
@@ -58,10 +61,14 @@ export default function Premium({
           const base_premium = response.data.base_premium;
           const multiple = response.data.multiple;
           setPremium(base_premium * multiple);
-          setShowPremium(true);
+          setTimeout(() => {
+            setLoadingPremium(false);
+            setShowPremium(true);
+          }, 1000);
         })
         .catch((error) => {
           console.error("Error:", error);
+          setLoadingPremium(false);
         });
     }
   };
@@ -71,8 +78,13 @@ export default function Premium({
       className={`${commonStyles.SameHeightContainer} ${styles.PremiumContainer}`}
     >
       <h2 className={commonStyles.MainHeading}>Premium Calculator</h2>
+      {isLoading && (
+        <div>
+          <img src="/loader.gif" />
+        </div>
+      )}
       <div
-        className={styles.CollapsibleWrapper}
+        className={styles.CollapsibleWrapperSlow}
         ref={aiRef}
         style={
           showAIResults
@@ -112,6 +124,11 @@ export default function Premium({
           initialSelectedValue={make}
         />
       </div>
+      {loadingPremium && (
+        <>
+          <SyncLoader loading={loadingPremium} color="#28a745" />
+        </>
+      )}
       <div
         className={styles.CollapsibleWrapper}
         ref={premiumRef}

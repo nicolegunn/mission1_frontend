@@ -2,12 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import commonStyles from "../../../assets/styles/CommonStyles.module.css";
 import styles from "./ImageUpload.module.css";
-export default function ImageUpload({ updateCarData }) {
+export default function ImageUpload({ updateCarData, updateShowLoading }) {
   const [image, setImage] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
     if (image) {
+      updateShowLoading(true);
       const formData = new FormData();
       formData.append("image", image);
 

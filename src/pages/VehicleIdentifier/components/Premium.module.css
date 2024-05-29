@@ -9,6 +9,12 @@
   transition: height ease 0.5s;
 }
 
+.CollapsibleWrapperSlow {
+  height: 0px;
+  overflow: hidden;
+  transition: height ease 1.1s;
+}
+
 .AITextContainer {
   width: 100%;
   padding: var(--spacer-med);
@@ -53,10 +59,10 @@
   width: 100%;
 }
 
+
 .PremiumMessage {
   text-align: center;
   color: var(--color-accent3-dark);
   font-size: var(--fs-heading-sub);
   font-weight: 600;
 }
-

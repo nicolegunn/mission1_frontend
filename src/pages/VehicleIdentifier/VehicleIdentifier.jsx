@@ -8,6 +8,8 @@ export default function VehicleIdentifier() {
   const [make, setMake] = useState("");
   const [bodyTypeConfidence, setBodyTypeConfidence] = useState(null);
   const [makeConfidence, setMakeConfidence] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showAIResults, setShowAIResults] = useState(false);
 
   const updateCarData = (
     newBodyType,
@@ -19,15 +21,28 @@ export default function VehicleIdentifier() {
     setMake(newMake);
     setBodyTypeConfidence(newBodyTypeConfidence);
     setMakeConfidence(newMakeConfidence);
+    setIsLoading(false);
   };
+
+  const updateShowLoading = (loading) => {
+    setIsLoading(loading);
+    setShowAIResults(!loading);
+  };
+
   return (
     <div className={styles.MainContainer}>
-      <ImageUpload updateCarData={updateCarData} />
+      <ImageUpload
+        updateCarData={updateCarData}
+        updateShowLoading={updateShowLoading}
+      />
       <Premium
         bodyType={bodyType}
         make={make}
         bodyTypeConfidence={bodyTypeConfidence}
         makeConfidence={makeConfidence}
+        updateShowLoading={updateShowLoading}
+        isLoading={isLoading}
+        showAIResults={showAIResults}
       />
     </div>
   );
