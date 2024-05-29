@@ -1,6 +1,6 @@
 {
   "globalHeaders": {
-    "Access-Control-Allow-Origin": "https://turnersapisbackend.azurewebsites.net",
+    "Access-Control-Allow-Origin": "https://turnersapisbackend.azurewebsites.net/risk_rating",
     "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
   },
   "navigationFallback": {
