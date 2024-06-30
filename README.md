@@ -1,53 +1,33 @@
-## Introduction
+# Vehicle Image Recognition & Insurance Premium Calculator Frontend (Archived)
 
-This is a prototype application that allows a user to upload an image of a vehicle to identify its type.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Axios](https://img.shields.io/badge/Axios-1.2.0-orange?style=for-the-badge&logo=axios)
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+
+**Note:** This project is no longer functional as the Azure Vision service and web apps have been disabled. The code is kept here for reference purposes only.
 
 ## Description
 
-The application identifies whether the uploaded image contains a vehicle and returns the body type and make of the vehicle along with confidence percentages for each prediction.  
-The make and model are automatically selected within drop-down boxes, which the user can override by selecting a different make and/or model if the information returned by the AI model is incorrect.  
-With a make and model selected, the user can then press the "Calculate Premium" button, and an insurance premium based on the make and model is returned.
+This project provided a frontend interface where users could upload an image of a vehicle. The image was then sent to a backend service that used Azure Vision to identify the body type and make of the vehicle.
+
+Additionally a premium calculator page would calculate a premium based on a user's driving history. 
+
+## Features
+
+- **Image Upload:** Users could upload an image of a vehicle.
+- **Real-Time Feedback:** The frontend displayed the identified body type and make of the vehicle.
+- **Premium Calculation:** Calculated a premium based on number of risky words in a users vehicle history description.
+- **Simple UI:** Built with React, providing a clean and responsive interface.
 
 ## Technologies Used
 
-- React: For building the user interface.
-- Node.js and Express: For backend development and API handling.
-- Azure Custom Vision: For image recognition and vehicle type identification.
-- Azure Static Web Apps: For hosting the front-end application.
-- Azure App Service: For hosting the backend services.
-- Azure Database for MySQL Flexible Server: For storing application data.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript)
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-1.2.0-orange?style=for-the-badge&logo=axios)
 
-## Live Web Application
 
-https://red-mud-0cb8e9600.5.azurestaticapps.net
+## License
 
-## GitHub Repositories
-
-### Frontend Repository:
-
-https://github.com/nicolegunn/mission1_frontend.git
-
-### Backend Repository:
-
-https://github.com/nicolegunn/mission1_backend.git
-
-## Installation and Setup
-
-Follow these steps to set up and run the project in development mode:
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/nicolegunn/mission1_frontend.git
-   ```
-2. Navigate to the project directory:
-   ```
-   cd <filepath>
-   ```
-3. Install dependencies
-   ```
-   npm i
-   ```
-4. Run the project in development mode:
-   ```
-   npm run dev
-   ```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
